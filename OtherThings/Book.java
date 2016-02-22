@@ -12,7 +12,7 @@ public class Book{
     }
     else {
       System.out.println("Adding " + name);
-      FileHandler.writeFile("Students.txt", formattedString);
+      FileHandler.writeFile("Books.txt", formattedString);
     }
     
   }
