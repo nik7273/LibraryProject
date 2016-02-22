@@ -3,6 +3,8 @@ import java.io.*;
 import java.*;
 
 public class FileHandler{
+   // Returns a String array where every element is a line in the file
+   // fileName is the name of the file only (not the path), and you have to add the .txt at the end
    public static String[] readFile(String fileName){
     ArrayList<String> linesArr = new ArrayList<String>();
     int fileLines = 0;
@@ -33,6 +35,7 @@ public class FileHandler{
     return lines;
   }
   
+  // Appends line/s to a .txt file
   public static void writeFile(String fileName, String[] writeInfo){
     try{
       String[] fileInfo = null;
@@ -63,10 +66,12 @@ public class FileHandler{
     }
   }
   
+  // Appends single line to a .txt file
   public static void writeFile(String fileName, String writeInfo){
     writeFile(fileName, new String[]{writeInfo});
   }
   
+  // clears the information in a file and makes it empty
   public static void formatFile(String fileName){
     try{
       PrintWriter outputFile = new PrintWriter(new FileWriter(fileName)); 
@@ -77,6 +82,7 @@ public class FileHandler{
     }
   }
   
+  // checks if a file contains a line with the String val 
   public static boolean contains(String[] arr, String val){
     for(String index: arr){
       if (val.equals(index)){
@@ -86,14 +92,17 @@ public class FileHandler{
     return false;
   }
   
+  // parses a line in comma delimited format and gets the "index"th object in the line 
   public static String readLine(String line, int index){
     return line.split(",")[index - 1].trim();
   }
   
+  // counts the amount of lines in a  file
   public static int linesInFile(String fileName){
     return readFile(fileName).length;
   }
   
+  // removes a line from a file
   public static void removeLine(String fileName, int lineNumber){
     String[] fileInfo = readFile(fileName);
     String[] newFileInfo = new String[fileInfo.length - 1];
@@ -112,6 +121,7 @@ public class FileHandler{
     writeFile(fileName, newFileInfo);
   }
   
+  // Appends information to a line in a file 
   public static void appendToLine(String fileName, String infoToAppend, int lineNumber){
     String[] lines = readFile(fileName);
     
