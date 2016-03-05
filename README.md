@@ -1,4 +1,5 @@
-# LibraryProject
+Library Project
 =========
-Celine's github name is whack
-=========
+Oran Luzon, Celine Park, Nikhil Devraj
+-----------
+
