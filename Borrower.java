@@ -20,16 +20,6 @@ public abstract class Borrower{
   public ArrayList<Book> booksPossessed;
   public int maxWeeks;
   
-//  public abstract void browseCategory(String category);
-//  
-//  public abstract boolean isBookAvailable(String bookName);
-//  public abstract boolean isBookAvailable(int isbn);
-//  
-//  public abstract void checkOutBook(String bookName);
-//  public abstract void checkOutBook(int isbn);
-//  
-//  public abstract void returnBook(Book bookName);
-  
   // a. Browse books available in a category by 
   // entering the category (Program prints the list of books in that category)
   public void browseCategory(String category){
@@ -64,9 +54,9 @@ public abstract class Borrower{
     return false;
   }
   
-  public boolean isBookAvailable(int isbn){
+  /*public boolean isBookAvailable(int isbn){
     return isBookAvailable("" + isbn);
-  }
+  }*/
   
 //c. Check out a book by entering the ISBN number or book name and print a receipt
   public void checkOutBook(String bookName){
