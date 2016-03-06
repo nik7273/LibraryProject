@@ -1,7 +1,5 @@
 //Students.txt: Contains "OSIS", "Last Name", "First Name", "Grade", "Official Class"
-import java.*;     //never used??
 import java.util.*;
-import java.io.*;    //never used??
 
 public class Student extends Borrower{
 

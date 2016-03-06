@@ -14,6 +14,7 @@ public class Librarian{
         System.out.println("\tSuccesfuly Removed " + FileHandler.readLine(singleBook, 2));
         break;
       }
+      counter++;
     }
   }
   

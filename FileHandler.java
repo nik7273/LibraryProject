@@ -1,6 +1,5 @@
- import java.util.*;
+import java.util.*;
 import java.io.*;
-import java.*;   //never used?
 
 public class FileHandler{
    // Returns a String array where every element is a line in the file
@@ -48,8 +47,6 @@ public class FileHandler{
       }
       
       PrintWriter outputFile = new PrintWriter(new FileWriter(fileName)); 
-      
-      ArrayList<String> allInfo = new ArrayList<String>();     //never used??
       
       for (String info: fileInfo){
         outputFile.println(info);

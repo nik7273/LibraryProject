@@ -3,9 +3,7 @@
 //a. Enter a new book (program needs to add the book to the Book.txt)
 //b. Remove a book (program needs to remove the book from the Book.txt)
 //c. Check borrowing history of a book by entering the ISBN or book name
-import java.*;
 import java.util.*;
-import java.io.*;
 
 public class Teacher extends Borrower{
   

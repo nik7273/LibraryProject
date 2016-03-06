@@ -10,7 +10,6 @@
 //2) Your program must read three input files in comma delimited .txt format to get information:
 
 import java.util.*;
-import java.io.*; //never used?
 
 
 public abstract class Borrower{
@@ -47,16 +46,13 @@ public abstract class Borrower{
     
     for (String book: books){
       if (FileHandler.readLine(book, 1).equals(bookName) || FileHandler.readLine(book, 2).equals(bookName)){
+        System.out.println("It's available to borrow.");
         return true;
       }
     }
-    
+    System.out.println("It's not available, sorry.");
     return false;
   }
-  
-  /*public boolean isBookAvailable(int isbn){
-    return isBookAvailable("" + isbn);
-  }*/
   
 //c. Check out a book by entering the ISBN number or book name and print a receipt
   public void checkOutBook(String bookName){
@@ -94,7 +90,7 @@ public abstract class Borrower{
                 break;
               }
               else if (bookTitle.equals(FileHandler.readLine(FileHandler.readFile("BorrowingHistory.txt")[FileHandler.linesInFile("BorrowingHistory.txt") - 1], 1))){
-                System.out.println("Book added");
+                System.out.println("Book added to Borrowing History");
                 FileHandler.writeFile("BorrowingHistory.txt", FileHandler.readLine(book, 2) + ", ");
                 break;
               }

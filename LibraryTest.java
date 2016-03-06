@@ -11,7 +11,7 @@ public class LibraryTest{
       response = ab.nextInt();
       System.out.println("Enter the book info in the following manner: ISBN ID, Book Name, Author, Category (i.e., adventure, romance, textbook, etc.), Status (i.e., New, Excellent, Good, Bad etc.)");
       ab.nextLine();
-      String bookInfo = ab.nextLine();
+      String bookInfo = ab.nextLine().toUpperCase();
       int isbnn = Integer.parseInt(FileHandler.readLine(bookInfo, 1));
       String bookNombre = FileHandler.readLine(bookInfo, 2);
       String authorr = FileHandler.readLine(bookInfo, 3);
@@ -39,7 +39,7 @@ public class LibraryTest{
       if (response == 1){
          System.out.println("Enter the student info in the following manner: OSIS, last name, first name, grade, official class");
          ab.nextLine();
-         String studentInfo = ab.nextLine();
+         String studentInfo = ab.nextLine().toUpperCase();
          System.out.println(FileHandler.readLine(studentInfo, 1));
          System.out.println(FileHandler.readLine(studentInfo, 2));
          int osisnum = Integer.parseInt(FileHandler.readLine(studentInfo, 1));
@@ -58,13 +58,13 @@ public class LibraryTest{
         int id = Integer.parseInt(FileHandler.readLine(teacherInfo, 1));
         System.out.println(id);
         String tName = FileHandler.readLine(teacherInfo, 2);    
-        //String tName = teacherInfo.split(",")[1];    //ArrayIndexOutOfBoundsException: 1 ????
         System.out.println(tName);
         borrower = new Teacher(id, tName);
       }
       else{
         System.out.println("Seriously just enter 1 or 2");
         borrower = new Teacher(123, "name");    //should never really be used b/c of do while loop
+        FileHandler.removeLine("Teachers.txt", FileHandler.linesInFile("Teachers.txt"));
       }
       } while ((response != 1) && (response != 2));
       System.out.println("Do you want to browse categories[1], search with key words[2], check the availability of a book[3], checkout a book[4] or return[5]?");
@@ -72,19 +72,19 @@ public class LibraryTest{
          if (response == 1){
            System.out.println("Enter your category: ");
            ab.nextLine();
-           String category = ab.nextLine();
+           String category = ab.nextLine().toUpperCase();
            borrower.browseCategory(category);
          }
          else if (response == 2){
            System.out.println("Enter your keyword: ");
            ab.nextLine();
-           String keyword = ab.nextLine();
+           String keyword = ab.nextLine().toUpperCase();
            borrower.keySearch(keyword);
          }
          else if (response == 3 || response == 4){
            System.out.println("Enter the book name or the ISBN number:");
            ab.nextLine();
-           String bookname = ab.nextLine();
+           String bookname = ab.nextLine().toUpperCase();
            if (response == 3)
              borrower.isBookAvailable(bookname);
            else
@@ -93,7 +93,7 @@ public class LibraryTest{
          else if (response == 5){
            System.out.println("Enter the book info in the following manner: ISBN ID, Book Name, Author, Category (i.e., adventure, romance, textbook, etc.), Status (i.e., New, Excellent, Good, Bad etc.)");
            ab.nextLine();
-           String bookInfo = ab.nextLine();
+           String bookInfo = ab.nextLine().toUpperCase();
            int isbnn = Integer.parseInt(FileHandler.readLine(bookInfo, 1));
            String bookNombre = FileHandler.readLine(bookInfo, 2);
            String authorr = FileHandler.readLine(bookInfo, 3);
@@ -107,5 +107,6 @@ public class LibraryTest{
     }
     else
       System.out.println("Invalid input");
+    ab.close();
   }
 }
